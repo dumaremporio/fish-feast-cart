@@ -1,13 +1,33 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import { CartProvider } from "@/contexts/CartContext";
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import CategoryGrid from "@/components/CategoryGrid";
+import ProductList from "@/components/ProductList";
+import CartDrawer from "@/components/CartDrawer";
+import Footer from "@/components/Footer";
 
 const Index = () => {
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
+  const handleSelectCategory = (categoryId: string) => {
+    setSelectedCategory(prev => (prev === categoryId ? null : categoryId));
+    setTimeout(() => {
+      document.getElementById("produtos")?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <CartProvider>
+      <div className="min-h-screen bg-background">
+        <Navbar />
+        <HeroSection />
+        <CategoryGrid onSelectCategory={handleSelectCategory} selectedCategory={selectedCategory} />
+        <ProductList selectedCategory={selectedCategory} />
+        <Footer />
+        <CartDrawer />
       </div>
-    </div>
+    </CartProvider>
   );
 };
 
