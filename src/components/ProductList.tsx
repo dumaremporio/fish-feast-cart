@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { Search } from "lucide-react";
 import { products, categories } from "@/data/products";
 import ProductCard from "./ProductCard";
 
@@ -6,15 +8,21 @@ interface Props {
 }
 
 const ProductList = ({ selectedCategory }: Props) => {
-  const filteredProducts = selectedCategory
-    ? products.filter(p => p.category === selectedCategory)
-    : products;
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const filteredProducts = products.filter(p => {
+    const matchesCategory = selectedCategory ? p.category === selectedCategory : true;
+    const matchesSearch = searchTerm
+      ? p.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (p.description || "").toLowerCase().includes(searchTerm.toLowerCase())
+      : true;
+    return matchesCategory && matchesSearch;
+  });
 
   const categoryName = selectedCategory
     ? categories.find(c => c.id === selectedCategory)?.name
     : "Todos os Produtos";
 
-  // Group by subcategory if applicable
   const subcategories = [...new Set(filteredProducts.map(p => p.subcategory).filter(Boolean))];
   const hasSubcategories = subcategories.length > 0;
 
@@ -33,7 +41,22 @@ const ProductList = ({ selectedCategory }: Props) => {
           )}
         </div>
 
-        {hasSubcategories ? (
+        <div className="max-w-md mx-auto mb-8">
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <input
+              type="text"
+              placeholder="Buscar produto..."
+              value={searchTerm}
+              onChange={e => setSearchTerm(e.target.value)}
+              className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-border bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring text-sm"
+            />
+          </div>
+        </div>
+
+        {filteredProducts.length === 0 ? (
+          <p className="text-center text-muted-foreground py-8">Nenhum produto encontrado.</p>
+        ) : hasSubcategories ? (
           subcategories.map(sub => {
             const subProducts = filteredProducts.filter(p => p.subcategory === sub);
             return (
@@ -57,7 +80,6 @@ const ProductList = ({ selectedCategory }: Props) => {
           </div>
         )}
 
-        {/* Also render products without subcategory */}
         {hasSubcategories && filteredProducts.filter(p => !p.subcategory).length > 0 && (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-6">
             {filteredProducts.filter(p => !p.subcategory).map(product => (
