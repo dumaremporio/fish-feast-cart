@@ -1,4 +1,5 @@
-import { Fish, MapPin, Clock, Phone } from "lucide-react";
+import { MapPin, Clock, Phone } from "lucide-react";
+import logoImg from "@/assets/logo-dumar.png";
 
 const Footer = () => (
   <footer className="bg-ocean-gradient text-primary-foreground py-12">
@@ -6,7 +7,7 @@ const Footer = () => (
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
         <div>
           <div className="flex items-center gap-2 mb-3">
-            <Fish className="h-6 w-6 text-gold" />
+            <img src={logoImg} alt="DuMar" className="h-8 w-8 object-contain" />
             <span className="font-serif text-xl font-bold">DuMar</span>
           </div>
           <p className="text-primary-foreground/70 text-sm leading-relaxed">

@@ -73,7 +73,7 @@ const CartDrawer = () => {
               <span className="text-xl font-bold text-gold">{formatPrice(totalPrice)}</span>
             </div>
             <a
-              href={`https://wa.me/5511914867948?text=${buildWhatsAppMessage()}`}
+              href={`https://wa.me/5511914867940?text=${buildWhatsAppMessage()}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 w-full py-3 bg-green-600 hover:bg-green-700 text-primary-foreground font-semibold rounded-lg transition-colors"
