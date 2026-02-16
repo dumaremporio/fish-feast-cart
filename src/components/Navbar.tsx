@@ -1,6 +1,7 @@
-import { ShoppingCart, Fish, Menu, X } from "lucide-react";
+import { ShoppingCart, Menu, X } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import { useState } from "react";
+import logoImg from "@/assets/logo-dumar.png";
 
 const Navbar = () => {
   const { totalItems, setIsCartOpen } = useCart();
@@ -15,14 +16,14 @@ const Navbar = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-ocean-gradient backdrop-blur-md border-b border-ocean-medium/30">
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
         <button onClick={() => scrollTo("hero")} className="flex items-center gap-2">
-          <Fish className="h-7 w-7 text-gold" />
+          <img src={logoImg} alt="DuMar" className="h-9 w-9 object-contain" />
           <span className="font-serif text-xl font-bold text-primary-foreground tracking-wide">
             Du<span className="text-gradient-gold">Mar</span>
           </span>
         </button>
 
         <nav className="hidden md:flex items-center gap-6">
-          {["Categorias", "Produtos"].map(item => (
+          {["Sobre", "Categorias", "Produtos"].map(item => (
             <button
               key={item}
               onClick={() => scrollTo(item.toLowerCase())}
@@ -53,7 +54,7 @@ const Navbar = () => {
 
       {mobileOpen && (
         <div className="md:hidden bg-ocean-deep/95 border-t border-ocean-medium/30 px-4 py-4 space-y-3">
-          {["Categorias", "Produtos"].map(item => (
+          {["Sobre", "Categorias", "Produtos"].map(item => (
             <button
               key={item}
               onClick={() => scrollTo(item.toLowerCase())}

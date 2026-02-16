@@ -2,6 +2,7 @@ import { useState } from "react";
 import { CartProvider } from "@/contexts/CartContext";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
 import CategoryGrid from "@/components/CategoryGrid";
 import ProductList from "@/components/ProductList";
 import CartDrawer from "@/components/CartDrawer";
@@ -22,6 +23,7 @@ const Index = () => {
       <div className="min-h-screen bg-background">
         <Navbar />
         <HeroSection />
+        <AboutSection />
         <CategoryGrid onSelectCategory={handleSelectCategory} selectedCategory={selectedCategory} />
         <ProductList selectedCategory={selectedCategory} />
         <Footer />

@@ -29,7 +29,7 @@ const HeroSection = () => {
             Ver Cardápio
           </button>
           <a
-            href="https://wa.me/5511914867948"
+            href="https://wa.me/5511914867940"
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-3 border border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 font-medium rounded-lg transition-all"
