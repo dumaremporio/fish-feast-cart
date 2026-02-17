@@ -6,9 +6,8 @@ const Footer = () => (
     <div className="container mx-auto px-4">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
         <div>
-          <div className="flex items-center gap-2 mb-3">
-            <img src={logoImg} alt="DuMar" className="h-8 w-8 object-contain" />
-            <span className="font-serif text-xl font-bold">DuMar</span>
+          <div className="mb-3">
+            <img src={logoImg} alt="DuMar Empório do Mar" className="h-16 object-contain" />
           </div>
           <p className="text-primary-foreground/70 text-sm leading-relaxed">
             Peixes e frutos do mar frescos ou congelados, e preparações pré-prontas da casa.

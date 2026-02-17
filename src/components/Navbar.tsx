@@ -15,11 +15,8 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-ocean-gradient backdrop-blur-md border-b border-ocean-medium/30">
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
-        <button onClick={() => scrollTo("hero")} className="flex items-center gap-2">
-          <img src={logoImg} alt="DuMar" className="h-9 w-9 object-contain" />
-          <span className="font-serif text-xl font-bold text-primary-foreground tracking-wide">
-            Du<span className="text-gradient-gold">Mar</span>
-          </span>
+        <button onClick={() => scrollTo("hero")} className="flex items-center">
+          <img src={logoImg} alt="DuMar Empório do Mar" className="h-14 object-contain" />
         </button>
 
         <nav className="hidden md:flex items-center gap-6">
