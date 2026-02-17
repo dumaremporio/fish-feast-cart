@@ -25,7 +25,7 @@ const Index = () => {
         <HeroSection />
         <AboutSection />
         <CategoryGrid onSelectCategory={handleSelectCategory} selectedCategory={selectedCategory} />
-        <ProductList selectedCategory={selectedCategory} />
+        {selectedCategory && <ProductList selectedCategory={selectedCategory} />}
         <Footer />
         <CartDrawer />
       </div>
