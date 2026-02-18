@@ -1,5 +1,3 @@
-import heroBanner from "@/assets/hero-banner.jpg";
-
 const HeroSection = () => {
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -7,11 +5,15 @@ const HeroSection = () => {
 
   return (
     <section id="hero" className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
-      <img
-        src={heroBanner}
-        alt="DuMar Empório do Mar - Peixes e frutos do mar frescos"
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
         className="absolute inset-0 w-full h-full object-cover"
-      />
+      >
+        <source src="/hero-video.mov" type="video/mp4" />
+      </video>
       <div className="absolute inset-0 bg-hero-overlay" />
       <div className="relative z-10 text-center px-4 max-w-3xl mx-auto animate-fade-in-up">
         <p className="text-gold font-medium tracking-[0.3em] uppercase text-sm mb-4">Empório & Take Away</p>
