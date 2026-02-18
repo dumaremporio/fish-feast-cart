@@ -21,7 +21,7 @@ const HeroSection = () => {
           Du<span className="text-gradient-gold">Mar</span>
         </h1>
         <p className="text-primary-foreground/80 text-xl md:text-2xl max-w-xl mx-auto mb-10 leading-relaxed">
-          Peixes e frutos do mar frescos, respeitando a sazonalidade dos pescados. Entregamos em toda São Paulo.
+          Peixes e Frutos do Mar frescos, respeitando defeso e sazonalidade, para entregar diversidade!
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
