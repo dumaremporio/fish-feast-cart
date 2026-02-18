@@ -16,11 +16,11 @@ const HeroSection = () => {
       </video>
       <div className="absolute inset-0 bg-hero-overlay" />
       <div className="relative z-10 text-center px-4 max-w-3xl mx-auto animate-fade-in-up">
-        <p className="text-gold font-medium tracking-[0.3em] uppercase text-sm mb-4">Empório & Take Away</p>
-        <h1 className="font-serif text-5xl md:text-7xl font-bold text-primary-foreground leading-tight mb-6">
+        <p className="text-gold font-medium tracking-[0.3em] uppercase text-base mb-4">Empório & Take Away</p>
+        <h1 className="font-serif text-6xl md:text-8xl font-bold text-primary-foreground leading-tight mb-6">
           Du<span className="text-gradient-gold">Mar</span>
         </h1>
-        <p className="text-primary-foreground/80 text-lg md:text-xl max-w-xl mx-auto mb-8 leading-relaxed">
+        <p className="text-primary-foreground/80 text-xl md:text-2xl max-w-xl mx-auto mb-10 leading-relaxed">
           Peixes e frutos do mar frescos, respeitando a sazonalidade dos pescados. Entregamos em toda São Paulo.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
