@@ -1,14 +1,12 @@
 import { MapPin, Clock, Phone } from "lucide-react";
-import logoImg from "@/assets/logo-dumar.png";
+
 
 const Footer = () => (
   <footer className="bg-ocean-gradient text-primary-foreground py-12">
     <div className="container mx-auto px-4">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
         <div>
-          <div className="mb-3">
-            <img src={logoImg} alt="DuMar Empório do Mar" className="h-16 object-contain" />
-          </div>
+          <h3 className="font-serif text-2xl font-bold text-primary-foreground tracking-wide mb-3">DuMar</h3>
           <p className="text-primary-foreground/70 text-sm leading-relaxed">
             Peixes e frutos do mar frescos ou congelados, e preparações pré-prontas da casa.
           </p>
