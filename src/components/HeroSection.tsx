@@ -28,15 +28,13 @@ const HeroSection = () => {
             onClick={() => scrollTo("categorias")}
             className="px-8 py-3 bg-gold hover:bg-gold-light text-accent-foreground font-semibold rounded-lg transition-all hover:shadow-lg hover:shadow-gold/20"
           >
-            Ver Cardápio
+            Para sua casa
           </button>
           <a
-            href="https://wa.me/5511914867940"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/b2b"
             className="px-8 py-3 border border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 font-medium rounded-lg transition-all"
           >
-            Pedir via WhatsApp
+            Para o seu Negócio
           </a>
         </div>
       </div>
