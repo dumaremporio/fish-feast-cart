@@ -1,14 +1,12 @@
-import logoImg from "@/assets/logo-dumar.png";
-
 const AboutSection = () => (
   <section id="sobre" className="py-16 bg-muted/30">
     <div className="container mx-auto px-4">
       <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-10">
-        <img
-          src={logoImg}
-          alt="Logo DuMar Empório do Mar"
-          className="w-48 h-48 object-contain flex-shrink-0"
-        />
+        <div className="flex-shrink-0 text-center">
+          <h2 className="font-serif text-5xl md:text-6xl font-bold text-foreground">
+            Du<span className="text-gold">Mar</span>
+          </h2>
+        </div>
         <div>
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
             Sobre Nós

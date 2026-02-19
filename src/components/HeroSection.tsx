@@ -1,3 +1,5 @@
+import logoImg from "@/assets/logo-dumar.png";
+
 const HeroSection = () => {
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -17,9 +19,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-hero-overlay" />
       <div className="relative z-10 text-center px-4 max-w-3xl mx-auto animate-fade-in-up">
         <p className="text-gold font-medium tracking-[0.3em] uppercase text-base mb-4">Empório & Take Away</p>
-        <h1 className="font-serif text-6xl md:text-8xl font-bold text-primary-foreground leading-tight mb-6">
-          Du<span className="text-gradient-gold">Mar</span>
-        </h1>
+        <img src={logoImg} alt="DuMar Empório do Mar" className="mx-auto h-40 md:h-56 object-contain mb-6" />
         <p className="text-primary-foreground/80 text-xl md:text-2xl max-w-xl mx-auto mb-10 leading-relaxed">
           Peixes e Frutos do Mar frescos, respeitando defeso e sazonalidade, para entregar diversidade!
         </p>
