@@ -1,27 +1,27 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
+import { Toradeira } from "@/components/ui/toradeira";
+import { Toradeira as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
+import { HashRouter, Rotas, Trajeto } from "react-router-dom";
+import Índice from "./páginas/Índice";
 import B2BRegister from "./pages/B2BRegister";
-import NotFound from "./pages/NotFound";
+import NotFound from "./páginas/NotFound";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
+      <Toradeira />
       <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/b2b" element={<B2BRegister />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <HashRouter>
+        <Rotas>
+          <Trajeto Caminho="/" elemento={<Índice />} />
+          <Trajeto Caminho="/b2b" elemento={<B2BRegister />} />
+          {/* ADICIONAR TODAS AS ROTAS PERSONALIZADAS ACIMA DA ROTA "*" QUE É GENÉRICA */}
+          <Trajeto Caminho="*" elemento={<NotFound />} />
+        </Rotas>
+      </HashRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
